@@ -1,0 +1,1 @@
+This folder is the results of different comparison methods on three PPI datasets. The code for plotting bar charts, ROC and PR curves is provided here.
