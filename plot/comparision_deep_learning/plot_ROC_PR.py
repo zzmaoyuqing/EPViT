@@ -37,7 +37,7 @@ savefig_roc_name_3672 = 'D3672 ROC curve.png'
 savefig_pr_name_3672 = 'D3672 PR curve.png'
 
 
-# # 2708
+# 2708
 test_trues_MY_2708 = np.load('../../output/PPI2708/test_trues.npy')
 test_scores_MY_2708 = np.load('../../output/PPI2708/final_test_scores.npy')
 
@@ -76,15 +76,17 @@ def plot_ROC_Curve(all_trues1,all_scores1,all_trues2,all_scores2,all_trues3,all_
     plt.plot(fpr1, tpr1, 'k-', color='#C52A20', label='EPViT ROC curve (area = {0:.3f})'.format(AUC1), lw=2)
     plt.plot(fpr2, tpr2, 'k--', color='#96CCCB', label='MBIEP ROC curve (area = {0:.3f})'.format(AUC2), lw=2)
     plt.plot(fpr3, tpr3, 'k-.', color='#7F7DB5', label='DeepEP ROC curve (area = {0:.3f})'.format(AUC3), lw=2)
-    plt.plot(fpr4, tpr4, 'k:', color='#F3D266', label='[16] ROC curve (area = {0:.3f})'.format(AUC4), lw=2)
+    plt.plot(fpr4, tpr4, 'k:', color='#F3D266', label='Zeng et al., 2021 ROC curve (area = {0:.3f})'.format(AUC4), lw=2)
     plt.plot([0,1],[0,1],color='black', lw=2, linestyle='--')
 
     plt.xlim([-0.05, 1.05])
     plt.ylim([-0.05, 1.05])
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.legend(loc="lower right")
-    plt.savefig(savefig_roc_name, pad_inches=0)
+    plt.xlabel('False Positive Rate', fontsize=14)
+    plt.ylabel('True Positive Rate', fontsize=14)
+    plt.legend(loc="lower right", fontsize=12)
+    plt.xticks(fontsize=12)
+    plt.yticks(fontsize=12)
+    plt.savefig(savefig_roc_name, bbox_inches='tight', pad_inches=0.05)
     # plt.show()
 
 plot_ROC_Curve(test_trues_MY_5093, test_scores_MY_5093,test_trues_MBIEP_5093,test_scores_MBIEP_5093,test_trues_DeepEP_5093,test_scores_DeepEP_5093,test_trues_deep_5093,test_scores_deep_5093,savefig_roc_name_5093)
@@ -112,13 +114,15 @@ def plot_PR_Curve(all_trues1,all_scores1,all_trues2,all_scores2,all_trues3, all_
     plt.plot(r1, p1, 'k-', color='#C52A20', label='EPViT PR curve (area = {0:.3f})'.format(AUPR1), lw=2)
     plt.plot(r2, p2, 'k--', color='#96CCCB', label='MBIEP PR curve (area = {0:.3f})'.format(AUPR2), lw=2)
     plt.plot(r3, p3, 'k-.', color='#7F7DB5', label='DeepEP PR curve (area = {0:.3f})'.format(AUPR3), lw=2)
-    plt.plot(r4, p4, 'k:', color='#F3D266', label='[16] PR curve (area = {0:.3f})'.format(AUPR4), lw=2)
+    plt.plot(r4, p4, 'k:', color='#F3D266', label='Zeng et al., 2021 PR curve (area = {0:.3f})'.format(AUPR4), lw=2)
     plt.xlim([-0.05, 1.05])
     plt.ylim([-0.05, 1.05])
-    plt.xlabel('Recall')
-    plt.ylabel('Precision')
-    plt.legend(loc="lower right")
-    plt.savefig(savefig_pr_name, pad_inches=0)
+    plt.xlabel('Recall', fontsize=14)
+    plt.ylabel('Precision', fontsize=14)
+    plt.legend(loc="lower right", fontsize=12)
+    plt.xticks(fontsize=12)
+    plt.yticks(fontsize=12)
+    plt.savefig(savefig_pr_name, bbox_inches='tight', pad_inches=0.05)
     # plt.show()
 
 plot_PR_Curve(test_trues_MY_5093, test_scores_MY_5093,test_trues_MBIEP_5093,test_scores_MBIEP_5093,test_trues_DeepEP_5093,test_scores_DeepEP_5093, test_trues_deep_5093, test_scores_deep_5093,savefig_pr_name_5093)
