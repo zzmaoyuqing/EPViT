@@ -1,4 +1,4 @@
-IMPORTANT NOTE: The dataset and ablation_dataset folders are missing from this directory due to upload data memory limitations, which can be downloaded Mendeley Data.
+IMPORTANT NOTE: The dataset and ablation_dataset folders are missing from this directory due to upload data memory limitations, which can be downloaded from Mendeley Data. The link is https://data.mendeley.com/preview/djdzz3rkxh?a=2dab0ccf-0d73-4685-8ef4-143119e6cd76.
 
 Code is provided to implement the EPViT:
 Run the main.py script to train the model to get the results in the 'output/PPI5093', 'output/PPI3672', 'output/PPI2708' folder.
