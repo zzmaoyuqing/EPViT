@@ -1,0 +1,1 @@
+Run the generate_dataset.py and the results are saved in the folder 'dataset'
